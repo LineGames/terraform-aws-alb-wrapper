@@ -23,6 +23,7 @@ module "wrapper" {
   name                             = try(each.value.name, var.defaults.name, null)
   name_prefix                      = try(each.value.name_prefix, var.defaults.name_prefix, null)
   load_balancer_type               = try(each.value.load_balancer_type, var.defaults.load_balancer_type, "application")
+  load_balancer_arn                = try(each.value.load_balancer_arn, var.defaults.load_balancer_arn, null)
   load_balancer_update_timeout     = try(each.value.load_balancer_update_timeout, var.defaults.load_balancer_update_timeout, "10m")
   access_logs                      = try(each.value.access_logs, var.defaults.access_logs, {})
   subnets                          = try(each.value.subnets, var.defaults.subnets, null)
