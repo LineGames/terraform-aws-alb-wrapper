@@ -13,7 +13,7 @@ module "wrapper" {
   https_listeners                  = try(each.value.https_listeners, var.defaults.https_listeners, [])
   http_tcp_listeners               = try(each.value.http_tcp_listeners, var.defaults.http_tcp_listeners, [])
   https_listener_rules             = try(each.value.https_listener_rules, var.defaults.https_listener_rules, [])
-  # http_tcp_listener_rules          = try(each.value.http_tcp_listener_rules, var.defaults.http_tcp_listener_rules, [])
+  http_tcp_listener_rules          = try(each.value.http_tcp_listener_rules, var.defaults.http_tcp_listener_rules, [])
   idle_timeout                     = try(each.value.idle_timeout, var.defaults.idle_timeout, 60)
   ip_address_type                  = try(each.value.ip_address_type, var.defaults.ip_address_type, "ipv4")
   listener_ssl_policy_default      = try(each.value.listener_ssl_policy_default, var.defaults.listener_ssl_policy_default, "ELBSecurityPolicy-2016-08")
